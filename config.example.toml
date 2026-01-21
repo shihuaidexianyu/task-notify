@@ -1,0 +1,10 @@
+default_message = "Task completed."
+
+[smtp]
+host = "smtp.example.com"
+port = 587
+username = "user@example.com"
+password = "your-app-password"
+from = "user@example.com"
+to = "you@example.com"
+subject = "Task Notify"
