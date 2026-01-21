@@ -10,13 +10,13 @@ pub struct Cli {
     #[command(subcommand)]
     pub command: Commands,
 
-    #[arg(long)]
+    #[arg(long, global = true)]
     pub config: Option<PathBuf>,
 
-    #[arg(long, value_name = "MESSAGE")]
+    #[arg(long, value_name = "MESSAGE", global = true)]
     pub msg: Option<String>,
 
-    #[arg(long)]
+    #[arg(long, global = true)]
     pub silent: bool,
 }
 

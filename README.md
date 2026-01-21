@@ -9,11 +9,60 @@ Send an email notification via SMTP when a task finishes or a PID exits.
 
 ## Install
 
+Build a release binary:
+
 ```bash
 cargo build --release
 ```
 
 The binary is at `target/release/task-notify`.
+
+## Add to PATH (Linux/macOS)
+
+If you want to run `task-notify` anywhere, add the binary directory to `PATH` or place the binary in a directory already in `PATH`. Common options:
+
+### Option 1: Cargo install (recommended)
+
+```bash
+cargo install --path .
+```
+
+If `~/.cargo/bin` is in your `PATH`, you can run:
+
+```bash
+task-notify --help
+```
+
+### Option 2: Copy to `/usr/local/bin`
+
+```bash
+sudo cp ./target/release/task-notify /usr/local/bin/
+```
+
+### Option 3: Add a custom directory to `PATH`
+
+```bash
+mkdir -p ~/my-tools
+cp ./target/release/task-notify ~/my-tools/
+```
+
+Add this line to your shell config (`~/.zshrc` or `~/.bashrc`):
+
+```bash
+export PATH="$HOME/my-tools:$PATH"
+```
+
+Reload your shell:
+
+```bash
+source ~/.zshrc
+```
+
+Verify:
+
+```bash
+which task-notify
+```
 
 ## Configuration
 
